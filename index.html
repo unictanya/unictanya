@@ -2,55 +2,206 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои ссылки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Авторассрочка — все ресурсы</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            background: #6c757d;
-            font-family: Arial, sans-serif;
+            background: #f8f6f0;  /* мягкий светлый, как кремовая бумага */
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 24px 16px;
         }
+
+        /* карточка — уютный блок с честными тенями */
         .card {
-            max-width: 500px;
+            max-width: 580px;
             width: 100%;
-            background: white;
-            border-radius: 48px;
-            padding: 40px 24px;
+            background: #ffffff;
+            border-radius: 44px;
+            padding: 36px 28px 44px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.01);
+            transition: all 0.2s ease;
             text-align: center;
         }
+
+        /* логотип */
+        .logo-wrap {
+            margin-bottom: 24px;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #fff6df;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #FFD317;
+        }
+
+        /* заголовок + подзаголовок */
         h1 {
-            font-size: 28px;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1a2c2e;   /* тёмный, но смягчённый — честность и спокойствие */
+            letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
-        .button {
-            display: block;
-            background: #f5f5f5;
-            padding: 14px 20px;
-            margin-bottom: 12px;
-            border-radius: 50px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
+        .brand-accent {
+            color: #FFD317;
+            display: inline-block;
         }
-        .footer {
-            margin-top: 32px;
-            font-size: 12px;
-            color: #999;
+        .sub {
+            font-size: 1rem;
+            color: #4a5b5e;
+            border-top: 2px solid #FFD317;
+            display: inline-block;
+            padding-top: 8px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* группа кнопок — уверенные, но мягкие */
+        .buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 32px 0 24px;
+        }
+
+        .tap-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            padding: 14px 20px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #1e2f32;
+            transition: all 0.2s;
+            border: 1px solid #e9e2d3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .btn-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* эмодзи или иконки — естественно и душевно */
+        .btn-emoji {
+            font-size: 1.5rem;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+        }
+
+        .arrow-icon {
+            color: #FFD317;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: transform 0.15s;
+        }
+
+        .tap-btn:hover {
+            background: #fffcf5;
+            border-color: #FFD317;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.12);
+        }
+        .tap-btn:hover .arrow-icon {
+            transform: translateX(3px);
+        }
+
+        /* футер — честный и ненавязчивый */
+        .footer-note {
+            font-size: 0.75rem;
+            color: #8f9b8f;
+            border-top: 1px solid #efe6d8;
+            padding-top: 20px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 20px 32px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .tap-btn {
+                padding: 12px 18px;
+                font-size: 0.95rem;
+            }
+            .btn-emoji {
+                font-size: 1.3rem;
+            }
+            .logo {
+                width: 84px;
+                height: 84px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Все ресурсы Авторассрочки</h1>
-        <a href="https://авто-рассрочка.рф/" class="button">Официальный сайт</a>
-        <a href="https://vk.com/unic_tanya" class="button">Мы в VK</a>
-        <a href="https://www.instagram.com/unic_tanya" class="button">Я в Instagram </a>
-        <a href="https://www.youtube.com/@avtorassrochka_avto" class="button">Мы YouTube</a>
-        <div class="footer">Нажмите на кнопку — перейдёте на нужный ресурс</div>
+<div class="card">
+    <!-- Логотип (загрузите файл logo.jpg/png в корень репозитория) -->
+    <div class="logo-wrap">
+        <img src="logo.jpg" alt="Авторассрочка" class="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20fill%3D%22%23FFD317%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2267%22%20text-anchor%3D%22middle%22%20fill%3D%22%23222%22%20font-size%3D%2236%22%3EA%3C%2Ftext%3E%3C%2Fsvg%3E';">
     </div>
+
+    <h1>Авторассрочка <span class="brand-accent">⚡</span></h1>
+    <div class="sub">Официальные каналы</div>
+
+    <div class="buttons-group">
+        <!-- сайт -->
+        <a href="https://авто-рассрочка.рф/" class="tap-btn" target="_blank" rel="noopener">
+            <span class="btn-left">
+                <span class="btn-emoji">🌐</span>
+                <span>Официальный сайт</span>
+            </span>
+            <span class="arrow-icon">→</span>
+        </a>
+
+        <!-- VK -->
+        <a href="https://vk.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
+            <span class="btn-left">
+                <span class="btn-emoji">📘</span>
+                <span>Мы в VK</span>
+            </span>
+            <span class="arrow-icon">→</span>
+        </a>
+
+        <a href="https://www.instagram.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
+            <span class="btn-left">
+                <span class="btn-emoji">📷</span>
+                <span>Я в Instagram</span>
+            </span>
+            <span class="arrow-icon">→</span>
+        </a>
+
+        <a href="https://www.youtube.com/@avtorassrochka_avto" class="tap-btn" target="_blank" rel="noopener">
+            <span class="btn-left">
+                <span class="btn-emoji">🎬</span>
+                <span>Мы в YouTube</span>
+            </span>
+            <span class="arrow-icon">→</span>
+        </a>
+    </div>
+
+    <div class="footer-note">
+        Нажмите на кнопку — перейдёте на нужный ресурс
+    </div>
+</div>
 </body>
 </html>
