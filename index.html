@@ -12,7 +12,8 @@
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
         }
-                    body {
+
+        body {
             background: #f8f6f0;
             background-image: url('pattern.png');
             background-repeat: repeat;
@@ -25,7 +26,6 @@
             padding: 24px 16px;
         }
 
-        /* карточка — уютный блок с честными тенями */
         .card {
             max-width: 580px;
             width: 100%;
@@ -37,10 +37,10 @@
             text-align: center;
         }
 
-        /* логотип */
         .logo-wrap {
             margin-bottom: 24px;
         }
+
         .logo {
             width: 100px;
             height: 100px;
@@ -51,18 +51,19 @@
             border: 3px solid #FFD317;
         }
 
-        /* заголовок + подзаголовок */
         h1 {
             font-size: 1.9rem;
             font-weight: 700;
-            color: #1a2c2e;   /* тёмный, но смягчённый — честность и спокойствие */
+            color: #1a2c2e;
             letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
+
         .brand-accent {
             color: #FFD317;
             display: inline-block;
         }
+
         .sub {
             font-size: 1rem;
             color: #4a5b5e;
@@ -73,7 +74,6 @@
             font-weight: 500;
         }
 
-        /* группа кнопок — уверенные, но мягкие */
         .buttons-group {
             display: flex;
             flex-direction: column;
@@ -103,7 +103,13 @@
             gap: 12px;
         }
 
-        /* эмодзи или иконки — естественно и душевно */
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            display: block;
+            object-fit: contain;
+        }
+
         .btn-emoji {
             font-size: 1.5rem;
             filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
@@ -122,11 +128,11 @@
             transform: translateY(-2px);
             box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.12);
         }
+
         .tap-btn:hover .arrow-icon {
             transform: translateX(3px);
         }
 
-        /* футер — честный и ненавязчивый */
         .footer-note {
             font-size: 0.75rem;
             color: #8f9b8f;
@@ -149,6 +155,10 @@
             .btn-emoji {
                 font-size: 1.3rem;
             }
+            .btn-icon {
+                width: 16px;
+                height: 16px;
+            }
             .logo {
                 width: 84px;
                 height: 84px;
@@ -162,25 +172,18 @@
         <img src="logo.png" alt="Авторассрочка" class="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20fill%3D%22%23FFD317%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2267%22%20text-anchor%3D%22middle%22%20fill%3D%22%23222%22%20font-size%3D%2236%22%3EA%3C%2Ftext%3E%3C%2Fsvg%3E';">
     </div>
 
-    <h1>К нам приходят — от нас уезжают!<span class="brand-accent">🔑</span></h1>
+    <h1>К нам приходят — от нас уезжают! <span class="brand-accent">🔑</span></h1>
     <div class="sub">Официальные каналы</div>
 
     <div class="buttons-group">
-        <!-- сайт -->
         <a href="https://авто-рассрочка.рф/" class="tap-btn" target="_blank" rel="noopener">
             <span class="btn-left">
-                <img src="web.png" alt="сайт" class="btn-icon">.btn-icon {
-            width: 20px;
-            height: 20px;
-            display: block;
-            object-fit: contain;
-        }
+                <img src="web.png" alt="сайт" class="btn-icon">
                 <span>Официальный сайт</span>
             </span>
             <span class="arrow-icon">→</span>
         </a>
 
-        <!-- VK -->
         <a href="https://vk.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
             <span class="btn-left">
                 <span class="btn-emoji">📘</span>
