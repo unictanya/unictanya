@@ -1,289 +1,291 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <title>Авторассрочка — все ресурсы</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Авторассрочка — новый стиль</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        body {
-            background: #f8f6f0;
-            background-image: url('pattern.png');
-            background-repeat: repeat;
-            background-position: top left;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 24px 16px;
-        }
+    body {
+      background: #ffffff; /* Белый фон */
+      background-image: url('pattern.png');
+      background-repeat: repeat;
+      background-position: top left;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
 
-        .card {
-            max-width: 580px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 44px;
-            padding: 36px 28px 44px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.01);
-            transition: all 0.2s ease;
-            text-align: center;
-        }
+    .card {
+      max-width: 580px;
+      width: 100%;
+      background: #ffffff; /* Белая карта */
+      border-radius: 44px;
+      padding: 36px 28px 44px;
+      box-shadow: 0 12px 28px rgba(60, 60, 59, 0.08), 0 0 0 1px rgba(60, 60, 59, 0.04);
+      transition: all 0.2s ease;
+      text-align: center;
+    }
 
-        .logo-wrap {
-            margin-bottom: 24px;
-        }
+    .logo-wrap {
+      margin-bottom: 24px;
+    }
 
-        .logo {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            background: #fff6df;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            border: 3px solid #FFD317;
-        }
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #f2f5f7; /* очень светлый серый */
+      box-shadow: 0 8px 20px rgba(60, 60, 59, 0.10);
+      border: 3px solid #07aed9; /* Голубой акцент */
+    }
 
-        h1 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            color: #1a2c2e;
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-        }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #3c3c3b; /* Графит */
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
 
-        .brand-accent {
-            color: #FFD317;
-            display: inline-block;
-        }
+    .brand-accent {
+      color: #07aed9; /* Голубой */
+      display: inline-block;
+    }
 
-        .sub {
-            font-size: 1rem;
-            color: #4a5b5e;
-            border-top: 2px solid #FFD317;
-            display: inline-block;
-            padding-top: 8px;
-            margin-top: 6px;
-            font-weight: 500;
-        }
+    .sub {
+      font-size: 1rem;
+      color: #6b6b6a; /* средний серый */
+      border-top: 2px solid #07aed9; /* голубая линия */
+      display: inline-block;
+      padding-top: 8px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
 
-        /* РЯД С КАРТИНКАМИ-ВИДЖЕТАМИ (3 в ряд) */
-        .widgets-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin: 28px 0 24px;
-        }
+    /* РЯД С КАРТИНКАМИ-ВИДЖЕТАМИ (3 в ряд) */
+    .widgets-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 28px 0 24px;
+    }
 
-        .image-widget {
-            display: block;
-            border-radius: 12px;
-            overflow: hidden;
-            text-decoration: none;
-            background: #fff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    .image-widget {
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      background: #ffffff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #e5e7e6; /* светлый серый */
+    }
 
-        .image-widget img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-        }
+    .image-widget img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
 
-        .image-widget:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-        }
+    .image-widget:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(60, 60, 59, 0.12);
+      border-color: #07aed9;
+    }
 
-        /* КНОПКИ СО ССЫЛКАМИ */
-        .buttons-group {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin: 0 0 24px;
-        }
+    /* КНОПКИ СО ССЫЛКАМИ */
+    .buttons-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0 0 24px;
+    }
 
-        .tap-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #ffffff;
-            padding: 14px 20px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: #1e2f32;
-            transition: all 0.2s;
-            border: 1px solid #e9e2d3;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-        }
+    .tap-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 14px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #3c3c3b; /* графит */
+      transition: all 0.2s;
+      border: 1px solid #d1d6d4; /* светло-серый */
+      box-shadow: 0 2px 4px rgba(60, 60, 59, 0.02);
+    }
 
-        .btn-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .btn-icon {
-            width: 20px;
-            height: 20px;
-            display: block;
-            object-fit: contain;
-        }
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      display: block;
+      object-fit: contain;
+    }
 
-        .arrow-icon {
-            color: #FFD317;
-            font-size: 1.3rem;
-            font-weight: 500;
-            transition: transform 0.15s;
-        }
+    .arrow-icon {
+      color: #07aed9; /* голубой */
+      font-size: 1.3rem;
+      font-weight: 500;
+      transition: transform 0.15s;
+    }
 
-        .tap-btn:hover {
-            background: #fffcf5;
-            border-color: #FFD317;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.12);
-        }
+    .tap-btn:hover {
+      background: #f7fafb; /* очень светлый голубовато-серый */
+      border-color: #07aed9;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -8px rgba(7, 174, 217, 0.15);
+    }
 
-        .tap-btn:hover .arrow-icon {
-            transform: translateX(3px);
-        }
+    .tap-btn:hover .arrow-icon {
+      transform: translateX(3px);
+    }
 
-        .footer-note {
-            font-size: 0.75rem;
-            color: #8f9b8f;
-            border-top: 1px solid #efe6d8;
-            padding-top: 20px;
-            margin-top: 6px;
-        }
+    .footer-note {
+      font-size: 0.75rem;
+      color: #8f9492; /* серый */
+      border-top: 1px solid #e2e6e4;
+      padding-top: 20px;
+      margin-top: 6px;
+    }
 
-        @media (max-width: 480px) {
-            .card {
-                padding: 24px 20px 32px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            .tap-btn {
-                padding: 12px 18px;
-                font-size: 0.95rem;
-            }
-            .btn-icon {
-                width: 16px;
-                height: 16px;
-            }
-            .logo {
-                width: 84px;
-                height: 84px;
-            }
-            .widgets-row {
-                gap: 6px;
-            }
-            .image-widget {
-                border-radius: 10px;
-            }
-            .image-widget img {
-                border-radius: 10px;
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+      .card {
+        padding: 24px 20px 32px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .tap-btn {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+      }
+      .btn-icon {
+        width: 16px;
+        height: 16px;
+      }
+      .logo {
+        width: 84px;
+        height: 84px;
+      }
+      .widgets-row {
+        gap: 6px;
+      }
+      .image-widget {
+        border-radius: 10px;
+      }
+      .image-widget img {
+        border-radius: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="card">
-    <div class="logo-wrap">
-        <img src="logo.png" alt="Авторассрочка" class="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20fill%3D%22%23FFD317%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2267%22%20text-anchor%3D%22middle%22%20fill%3D%22%23222%22%20font-size%3D%2236%22%3EA%3C%2Ftext%3E%3C%2Fsvg%3E';">
-    </div>
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Авторассрочка" class="logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20fill%3D%22%2307aed9%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2267%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%20font-size%3D%2236%22%3EA%3C%2Ftext%3E%3C%2Fsvg%3E';">
+  </div>
 
-    <h1>К нам приходят — от нас уезжают! <span class="brand-accent">🔑</span></h1>
-    <div class="sub">Официальные каналы</div>
+  <h1>К нам приходят — от нас уезжают! <span class="brand-accent">🚙</span></h1>
+  <div class="sub">Официальные каналы</div>
 
-    <!-- РЯД С КАРТИНКАМИ-ВИДЖЕТАМИ (3 в ряд) с deep‑ссылками на VK -->
-    <div class="widgets-row">
-        <a href="vk://vk.com/market-3974927?screen=group"
-           onclick="openVkApp(event, 'vk://vk.com/market-3974927?screen=group', 'https://vk.com/market-3974927?screen=group')"
-           class="image-widget"
-           target="_blank" rel="noopener">
-            <img src="widget-catalog.png" alt="Каталог автомобилей партнёров">
-        </a>
+  <!-- РЯД С КАРТИНКАМИ-ВИДЖЕТАМИ (3 в ряд) с deep‑ссылками на VK -->
+  <div class="widgets-row">
+    <a href="vk://vk.com/market-3974927?screen=group"
+       onclick="openVkApp(event, 'vk://vk.com/market-3974927?screen=group', 'https://vk.com/market-3974927?screen=group')"
+       class="image-widget"
+       target="_blank" rel="noopener">
+      <img src="widget-catalog.png" alt="Каталог автомобилей партнёров">
+    </a>
 
-        <a href="vk://vk.com/unic_tanya?w=app51715800_-3974927"
-           onclick="openVkApp(event, 'vk://vk.com/unic_tanya?w=app51715800_-3974927', 'https://vk.com/unic_tanya?w=app51715800_-3974927')"
-           class="image-widget"
-           target="_blank" rel="noopener">
-            <img src="widget-calc.png" alt="Расчёт под вашу ситуацию">
-        </a>
+    <a href="vk://vk.com/unic_tanya?w=app51715800_-3974927"
+       onclick="openVkApp(event, 'vk://vk.com/unic_tanya?w=app51715800_-3974927', 'https://vk.com/unic_tanya?w=app51715800_-3974927')"
+       class="image-widget"
+       target="_blank" rel="noopener">
+      <img src="widget-calc.png" alt="Расчёт под вашу ситуацию">
+    </a>
 
-        <a href="vk://vk.com/im/channels/-230859738"
-           onclick="openVkApp(event, 'vk://vk.com/im/channels/-230859738', 'https://vk.com/im/channels/-230859738')"
-           class="image-widget"
-           target="_blank" rel="noopener">
-            <img src="widget-stories.png" alt="Истории клиентов">
-        </a>
-    </div>
+    <a href="vk://vk.com/im/channels/-230859738"
+       onclick="openVkApp(event, 'vk://vk.com/im/channels/-230859738', 'https://vk.com/im/channels/-230859738')"
+       class="image-widget"
+       target="_blank" rel="noopener">
+      <img src="widget-stories.png" alt="Истории клиентов">
+    </a>
+  </div>
 
-    <!-- КНОПКИ СО ССЫЛКАМИ -->
-    <div class="buttons-group">
-        <a href="https://авто-рассрочка.рф/" class="tap-btn" target="_blank" rel="noopener">
-            <span class="btn-left">
-                <img src="web.png" alt="сайт" class="btn-icon">
-                <span>Официальный сайт</span>
-            </span>
-            <span class="arrow-icon">→</span>
-        </a>
+  <!-- КНОПКИ СО ССЫЛКАМИ -->
+  <div class="buttons-group">
+    <a href="https://авто-рассрочка.рф/" class="tap-btn" target="_blank" rel="noopener">
+      <span class="btn-left">
+        <img src="web.png" alt="сайт" class="btn-icon">
+        <span>Официальный сайт</span>
+      </span>
+      <span class="arrow-icon">→</span>
+    </a>
 
-        <a href="https://vk.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
-            <span class="btn-left">
-                <img src="vk.png" alt="VK" class="btn-icon">
-                <span>Мы в VK</span>
-            </span>
-            <span class="arrow-icon">→</span>
-        </a>
+    <a href="https://vk.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
+      <span class="btn-left">
+        <img src="vk.png" alt="VK" class="btn-icon">
+        <span>Мы в VK</span>
+      </span>
+      <span class="arrow-icon">→</span>
+    </a>
 
-        <a href="https://www.instagram.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
-            <span class="btn-left">
-                <img src="instagram.png" alt="Instagram" class="btn-icon">
-                <span>Я в Instagram</span>
-            </span>
-            <span class="arrow-icon">→</span>
-        </a>
+    <a href="https://www.instagram.com/unic_tanya" class="tap-btn" target="_blank" rel="noopener">
+      <span class="btn-left">
+        <img src="instagram.png" alt="Instagram" class="btn-icon">
+        <span>Я в Instagram</span>
+      </span>
+      <span class="arrow-icon">→</span>
+    </a>
 
-        <a href="https://www.youtube.com/@avtorassrochka_avto" class="tap-btn" target="_blank" rel="noopener">
-            <span class="btn-left">
-                <img src="youtube.png" alt="YouTube" class="btn-icon">
-                <span>Мы в YouTube</span>
-            </span>
-            <span class="arrow-icon">→</span>
-        </a>
-    </div>
+    <a href="https://www.youtube.com/@avtorassrochka_avto" class="tap-btn" target="_blank" rel="noopener">
+      <span class="btn-left">
+        <img src="youtube.png" alt="YouTube" class="btn-icon">
+        <span>Мы в YouTube</span>
+      </span>
+      <span class="arrow-icon">→</span>
+    </a>
+  </div>
 
-    <div class="footer-note">
-        Нажмите на кнопку — перейдёте на нужный ресурс
-    </div>
+  <div class="footer-note">
+    Нажмите на кнопку — перейдёте на нужный ресурс
+  </div>
 </div>
 
 <script>
-    function openVkApp(event, appUrl, webUrl) {
-        event.preventDefault();
+  function openVkApp(event, appUrl, webUrl) {
+    event.preventDefault();
 
-        const start = Date.now();
+    const start = Date.now();
 
-        window.location.href = appUrl;
+    window.location.href = appUrl;
 
-        setTimeout(function () {
-            if (Date.now() - start < 1600) {
-                window.location.href = webUrl;
-            }
-        }, 1200);
-    }
+    setTimeout(function () {
+      if (Date.now() - start < 1600) {
+        window.location.href = webUrl;
+      }
+    }, 1200);
+  }
 </script>
 </body>
 </html>
